@@ -4,6 +4,12 @@ CLASS zcl_abap_git_demo DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
+  " method to check if sales order is active
+  METHODS is_sales_order_active
+      IMPORTING
+        iv_sales_order_id            TYPE string
+      RETURNING
+        VALUE(rv_sales_order_status) TYPE abap_bool.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -11,4 +17,7 @@ ENDCLASS.
 
 
 CLASS zcl_abap_git_demo IMPLEMENTATION.
+METHOD is_sales_order_active.
+rv_sales_order_status = abap_true.
+  ENDMETHOD.
 ENDCLASS.
